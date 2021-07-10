@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <!-- Firebase -->
+ <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+ <script>
+ // FIREBASE: configuracion de mi app en la nube
+     var firebaseConfig = {
+       apiKey: "AIzaSyDOxxYF2_O_VQ_OH3NkapNiWl6nzdQv3xI",
+       authDomain: "chat-js-firebase.firebaseapp.com",
+       projectId: "chat-js-firebase",
+       storageBucket: "chat-js-firebase.appspot.com",
+       messagingSenderId: "444285308358",
+       appId: "1:444285308358:web:9a4fe0ea4260c9f8aa36c7"
+     };
+     // Initialize Firebase
+     firebase.initializeApp(firebaseConfig);
+  </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+      <h1 class="text-center text-primary fw-bold">Chat de Roberto: 2 usuarios sin autentificar</h1>
+      <div id="segundoTitulo" class="bg-primary text-center fs-2 fw-bold" text="white">Quieres entrar al Chat?</div>
+      <br><br><br>
+      <div class="text-center">
+        <!--<img src="..." class="rounded" alt="...">-->
+        <img src="./img/restaurante1.jpg" class="img-fluid" alt="tartadequeso" id="fotoPortada"> 
+        <div id="listadoChats" style="height:65vh;overflow-y:scroll">   </div>   
+      </div>
+      <br>
+      <nav class="navbar navbar-light bg-light">
+        <div class="d-flex justify-content-between">
+          <a class="navbar-brand flex-grow-1" href="#">
+            <img src="./img/mango.jpg" alt="" width="30" height="24" class="mw-100 mh-100 d-inline-block align-text-top">
+            <span id ="nombreUsuario" >SELECCIONA USUARIO:</span>
+          </a> 
+        </div>
+         <div id="botones"></div>
+          <!--Pone botones de Entrar Roberto, Entrar Nasya y Salir -->     
+      </nav>
+    <!--FORMULARIO ENVIAR MENSAJES AL CHAT -->
+    </div>    
+    <!-- esconde el DIV o no segun la propiedad .style.display-->
+    <div id="charlar">         
+      <!--ENVIAR MENSAJES-->
+        <div class="input-group">  
+          <input type="text" class="form-control" id="inputChat" placeholder="ESCRIBE UN MENSAJE" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="enviarMensaje">ENVIAR MENSAJE</button>
+        </div>
+        <!--ADJUNTAR FICHERO-->
+        <div class="input-group mb-3">
+          <button class="btn btn-primary" type="button" for="formFile" id="enviarFoto">ENVIAR FOTO</button>
+          <input type="file" class="form-control" id="inputFoto" aria-describedby="inputGroupFileAddon03" aria-label="Carga">
+         </div> 
+        </div> 
+      <script src="app.js"></script>
+      </body>
+</html>
